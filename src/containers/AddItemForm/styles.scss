@@ -1,0 +1,136 @@
+.add_item_form_container {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  width: 450px;
+  height: 400px;
+  border: 1px solid white;
+  padding: 36px 36px 66px 36px;
+
+  .add_item_form {
+    display: flex;
+    flex-flow: column nowrap;
+
+    h6 {
+      margin-top: 0;
+      font-size: 12px;
+      margin-bottom: 35px;
+      text-transform: uppercase;
+    }
+
+    .form_input_container {
+      position: relative;
+
+      input[type="text"] {
+        border: 0;
+        outline: 0;
+        width: 100%;
+        padding-bottom: 13px;
+        margin-bottom: 40px;
+        background: none;
+        border-bottom: 1px solid black;
+
+        &.input_error {
+          border-bottom: 1px solid red;
+        }
+      }
+
+      .add_item_form_error {
+        position: absolute;
+        margin: 0;
+        top: 0;
+        right: 0;
+        margin-top: 4px;
+        text-transform: uppercase;
+        font-size: 11px;
+        color: red;
+      }
+    }
+
+    .condition_category_container {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      width: 100%;
+
+      input[type='number'] {
+        border: 0;
+        outline: 0;
+        width: 100px;
+        height: 28px;
+        padding-bottom: 5px;
+        margin-bottom: 40px;
+        background: none;
+        border-bottom: 1px solid black;
+
+        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+          appearance: none;
+        }
+
+        &.input_error {
+          border: 1px solid red;
+        }
+      }
+
+      select {
+        width: 100px;
+        height: 28px;
+        background: none;
+        border: none;
+
+        &.input_error {
+          border: 1px solid red;
+        }
+      }
+    }
+
+
+    input[type="submit"] {
+      position: absolute;
+      border: none;
+      outline: none;
+      bottom: 0;
+      align-self: center;
+      padding-top: 23px;
+      padding-bottom: 23px;
+      width: 140px;
+      margin-bottom: -33px;
+      letter-spacing: 1px;
+      background: black;
+      color: #D0D0D0;
+      cursor: pointer;
+    }
+
+    .close_button_container {
+      position: fixed;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      margin: 25px;
+      animation: rotate .5s;
+      
+      .close_button {
+        position: absolute;
+        transform: rotate(45deg);
+        margin-left: 26px;
+
+        .left_x, .right_x {
+          position: absolute;
+          border: .5px solid black;
+          height: 35px;
+        }
+
+        .left_x {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(300deg); }
+  to { transform: rotate(360deg); }
+}

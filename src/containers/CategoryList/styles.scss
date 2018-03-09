@@ -1,0 +1,151 @@
+.category_list_container {
+  width: 100%;
+
+  .category_main_image, .fade_out {
+    display: flex;
+    flex-flow: row nowrap;
+    position: fixed;
+    top: 0;
+    left: 65px;
+    right: 0;
+    height: 100vh;
+  }
+
+  .fade_out {
+    background-color: black;
+    opacity: 0;
+  }
+
+  .category_spacer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    height: 100vh;
+
+    .category_information_container {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      max-width: 555px;
+      bottom: 0;
+      margin-bottom: 90px;
+      opacity: 1;
+
+      h2 {
+        margin-top: 0;
+        text-transform: uppercase;
+        color: #FBFBFB;
+      }
+
+      p {
+        color: #FBFBFB;
+      }
+    }
+  }
+
+  .category_header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    position: relative;
+    left: 0;
+    right: 0;
+    background: #EBEBEB;
+    z-index: 3;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-bottom: -76px;
+
+    .all_items_button, .add_item_button {
+      padding: 28px 0;
+      text-transform: uppercase;
+      width: 200px;
+      &:hover {
+        transition: 0.25;
+        color: grey;
+        cursor: pointer;
+      }
+    }
+
+    .all_items_button {
+      margin-left: 20px;
+    }
+    
+    .add_item_button {
+      text-align: center;
+    }
+
+    .search_bar {
+      outline: 0;
+      border: 0;
+      width: 200px;
+      height: 35px;
+      padding: 15px;
+      margin-right: 20px;
+      background: #EBEBEB;
+      border-bottom: 1px solid black;
+      text-align: center;
+      align-self: center;
+    }
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    left: 65px;
+  }
+
+  .category_list_items_container {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    padding-top: 76px;
+    min-height: 100vh;
+    background: #EBEBEB;
+
+    .item_container {
+      position: relative;
+      height: 270px;
+      width: 50%;
+      background: #EBEBEB;
+      border-bottom: 1px solid white;
+
+      &:nth-child(2n) {
+        border-left: 1px solid white;
+      }
+
+      &:last-child {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .form-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #EBEBEB;
+    z-index: 20;
+    animation: fadein .4s ease-out;
+
+    &.fadeout {
+      animation: fadeout .6s ease-out;
+    }
+  }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
